@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>toDataURL Test</title>
+        <script type="application/javascript" language="javascript">
+            window.onload = create;
+            function create() {
+                var canvas = document.getElementById("myCanvas");
+                var x = canvas.getContext("2d");
+                x.fillStyle = "rgba(216,69,100,1)";
+                x.fillRect(36,10,100,100);
+                y.fillStyle = "rgba(27,135,35,1)";
+                y.fillRect=(100,80,100,100);
+            }
+        </script>
+        <script type="text/javascript">
+        function saveIt() {
+            var myDrawing = document.getElementById("myCanvas");
+            var drawingString = myDrawing.toDataURL("image/png");
+            var postData = "canvasData="+drawingString;
+            var ajax = new XMLHttpRequest();
+            ajax.open("POST", 'http://carbon.gear.host/saveimage.php', true);
+            ajax.setRequestHeader('Content-Type', 'canvas/upload');
+            ajax.onreadystatechange=function() {
+                if(ajax.readyState == 4) {
+                alert("image saved");
+                }
+            };
+            ajax.send(postData);
+        }
+        </script>
+    </head>
+    <body>
+        <div>
+            <canvas id="myCanvas" width="225" height="225"></canvas>
+        </div>
+        <div>
+            <button onClick="saveIt();">Save Image</button>
+        </div>
+    </body>
+</html>
