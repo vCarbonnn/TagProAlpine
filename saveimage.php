@@ -1,3 +1,4 @@
+<?php header('Access-Control-Allow-Origin: *'); ?>
 <?php
 header("Access-Control-Allow-Origin: *");
 $rawImage=$GLOBALS['HTTP_RAW_POST_DATA'];
