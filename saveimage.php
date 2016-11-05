@@ -1,6 +1,8 @@
-<?php header('Access-Control-Allow-Origin: *'); ?>
 <?php
-header("Access-Control-Allow-Origin: *");
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST');
+header("Access-Control-Allow-Headers: X-Requested-With");
+
 $rawImage=$GLOBALS['HTTP_RAW_POST_DATA'];
 $removeHeaders=substr($rawImage,strpos($rawImage, ",")+1);
 $decode=base64_decode($removeHeaders);
