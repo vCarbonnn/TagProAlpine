@@ -20,12 +20,7 @@
             var postData = "canvasData="+drawingString;
             var ajax = new XMLHttpRequest();
             ajax.open("POST", 'http://carbon.gear.host/saveimage.php', true);
-            ajax.setRequestHeader('Content-Type', 'canvas/upload');
-            ajax.onreadystatechange=function() {
-                if(ajax.readyState == 4) {
-                alert("image saved");
-                }
-            };
+            //ajax.setRequestHeader('Content-Type', 'canvas/upload');
             ajax.send(postData);
         }
         </script>
