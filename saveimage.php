@@ -11,5 +11,5 @@ $decode=base64_decode($removeHeaders);
 $fopen=fopen('myImage.png', 'wb');
 fwrite($fopen,$decode);
 fclose($fopen);
-echo $rawImage;
+echo "Test: $rawImage";
 ?>
